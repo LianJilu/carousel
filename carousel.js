@@ -15,7 +15,7 @@
 
         this.$btnPrev.addClass("disable");
         if (visualCardNum >= cardNum){
-            $btnNext.addClass("disable");
+            this.$btnNext.addClass("disable");
             return;
         }
 

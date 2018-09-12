@@ -10,7 +10,35 @@
     <script src="../carousel.js"></script>
 </head>
 <body>
-    <div id="carousel">
+    <div id="carousel1" class="carousel">
+        <div class="carousel-viewport">
+            <div class="carousel-shelf">
+                <div class="carousel-card"><img src="./1.jpg" alt=""></div
+                ><div class="carousel-card"><img src="./1.jpg" alt=""></div
+                ><div class="carousel-card"><img src="./1.jpg" alt=""></div
+                ><div class="carousel-card"><img src="./1.jpg" alt=""></div
+                ><div class="carousel-card"><img src="./1.jpg" alt=""></div>
+            </div>  
+        </div>
+        <div>
+            <button type="button" class="carousel-control_prev">prev</button>
+            <button type="button" class="carousel-control_next">next</button>
+        </div>
+    </div>
+    <div id="carousel2" class="carousel">
+        <div class="carousel-viewport">
+            <div class="carousel-shelf">
+                <div class="carousel-card"><img src="./1.jpg" alt=""></div
+                ><div class="carousel-card"><img src="./1.jpg" alt=""></div
+                ><div class="carousel-card"><img src="./1.jpg" alt=""></div>
+            </div>  
+        </div>
+        <div>
+            <button type="button" class="carousel-control_prev">prev</button>
+            <button type="button" class="carousel-control_next">next</button>
+        </div>
+    </div>
+    <div class="carousel carousel-vertical">
         <div class="carousel-viewport">
             <div class="carousel-shelf">
                 <div class="carousel-card"><img src="./1.jpg" alt=""></div
@@ -27,7 +55,7 @@
     </div>
     <script>
         $(function(){
-            $("#carousel").carousel();
+            $(".carousel").carousel();
         })
     </script>
 </body>
