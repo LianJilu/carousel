@@ -27,3 +27,14 @@
     max-width: 100%;
     max-height: 100%;
 }
+
+.carousel-vertical .carousel-viewport {
+    width: 82px;
+    height: 358px;
+}
+
+.carousel-vertical .carousel-card {
+    display: block;
+    margin-right : 0;
+    margin-bottom: 10px;
+}

@@ -97,6 +97,7 @@
         var location = this.location;
         var $btnNext = this.$btnNext;
         var $btnPrev = this.$btnPrev;
+        var visualCardNum = this.getVisualCardNum();
         var relateLocation = 1;
 
         if ($btnPrev.is(".disable")) return;
@@ -119,7 +120,7 @@
             var $this = $(this);
             var data = $this.data("carousel");
 
-            if (!data) $this.data("carousel",(data = new Carousel(this)));
+            if (!data) $this.data("carousel",(data = new Carousel(this, option)));
         })
     }
 

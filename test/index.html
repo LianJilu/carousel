@@ -30,6 +30,7 @@
             <div class="carousel-shelf">
                 <div class="carousel-card"><img src="./1.jpg" alt=""></div
                 ><div class="carousel-card"><img src="./1.jpg" alt=""></div
+                ><div class="carousel-card"><img src="./1.jpg" alt=""></div
                 ><div class="carousel-card"><img src="./1.jpg" alt=""></div>
             </div>  
         </div>
@@ -38,7 +39,40 @@
             <button type="button" class="carousel-control_next">next</button>
         </div>
     </div>
-    <div class="carousel carousel-vertical">
+    <div id="carousel3" class="carousel">
+        <div class="carousel-viewport">
+            <div class="carousel-shelf">
+                <div class="carousel-card"><img src="./1.jpg" alt=""></div
+                ><div class="carousel-card"><img src="./1.jpg" alt=""></div
+                ><div class="carousel-card"><img src="./1.jpg" alt=""></div>
+            </div>  
+        </div>
+        <div>
+            <button type="button" class="carousel-control_prev">prev</button>
+            <button type="button" class="carousel-control_next">next</button>
+        </div>
+    </div>
+    <div id="carousel4" class="carousel-multi">
+        <div class="carousel-viewport">
+            <div class="carousel-shelf">
+                <div class="carousel-card"><img src="./1.jpg" alt=""></div
+                ><div class="carousel-card"><img src="./1.jpg" alt=""></div
+                ><div class="carousel-card"><img src="./1.jpg" alt=""></div
+                ><div class="carousel-card"><img src="./1.jpg" alt=""></div
+                ><div class="carousel-card"><img src="./1.jpg" alt=""></div
+                ><div class="carousel-card"><img src="./1.jpg" alt=""></div
+                ><div class="carousel-card"><img src="./1.jpg" alt=""></div
+                ><div class="carousel-card"><img src="./1.jpg" alt=""></div
+                ><div class="carousel-card"><img src="./1.jpg" alt=""></div
+                ><div class="carousel-card"><img src="./1.jpg" alt=""></div>
+            </div>  
+        </div>
+        <div>
+            <button type="button" class="carousel-control_prev">prev</button>
+            <button type="button" class="carousel-control_next">next</button>
+        </div>
+    </div>
+    <div class="carousel-vertical">
         <div class="carousel-viewport">
             <div class="carousel-shelf">
                 <div class="carousel-card"><img src="./1.jpg" alt=""></div
@@ -56,6 +90,8 @@
     <script>
         $(function(){
             $(".carousel").carousel();
+            $(".carousel-multi").carousel({multi:true,duration:800});
+            $(".carousel-vertical").carousel({vertical:true});
         })
     </script>
 </body>
