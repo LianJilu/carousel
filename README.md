@@ -10,6 +10,12 @@ Carousel is a jQuery plugin to scroll elements by manual, it can scroll horizont
 
 ## Usage
 
+**dependency**: jQuery
+
+```javascript
+$(elements).carousel(options)
+```
+
 ## Options
 
 Type: PlainObject
@@ -32,7 +38,7 @@ A map of additional options to pass to the method.
 
     Type: Number or String
 
-    A string or number determining how long the animation will run(jQuery's animate).
+    A string or number determining how long the animation will run, this is [jQuery's animate](https://api.jquery.com/animate/#animate-properties-duration-easing-complete).
 
 ## LICENSE
 
