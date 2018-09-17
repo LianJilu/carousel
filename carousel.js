@@ -72,7 +72,8 @@
         var location = this.location;
         var cardNum = this.cardNum;
         var visualCardNum = this.getVisualCardNum();
-        var scrollableNum = cardNum - visualCardNum - location > 0 ? cardNum - visualCardNum - location : 0;
+        var scrollableNum= cardNum - visualCardNum;
+        var leftNum= cardNum - visualCardNum - location > 0 ? cardNum - visualCardNum - location : 0;
         var $btnNext = this.$btnNext;
         var $btnPrev = this.$btnPrev;
         var relateLocation = 1;
@@ -80,10 +81,10 @@
         if ($btnNext.is(".disable")) return;
 
         if (this.option.multi){
-            if (scrollableNum > visualCardNum) {
+            if (leftNum > visualCardNum) {
                 relateLocation = visualCardNum;
             } else {
-                relateLocation = scrollableNum;
+                relateLocation = leftNum;
             }
         }
 
