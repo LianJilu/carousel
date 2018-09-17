@@ -122,9 +122,26 @@
             </div>
             <div class="col-md-6">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Vertical</div>
+                    <div class="panel-heading">Multi</div>
                     <div class="panel-body">
-                        ...
+                            <div id="carousel-multi" class="carousel-multi">
+                                <div class="carousel-viewport">
+                                    <a href="javascript:void(0);" class="carousel-control_prev carousel_control"><span class="glyphicon glyphicon-menu-left"></span></a>
+                                    <div class="carousel-shelf">
+                                        <div class="carousel-card"><img src="1.jpg" alt=""></div
+                                        ><div class="carousel-card"><img src="2.jpg" alt=""></div
+                                        ><div class="carousel-card"><img src="3.jpg" alt=""></div
+                                        ><div class="carousel-card"><img src="4.jpg" alt=""></div
+                                        ><div class="carousel-card"><img src="2.jpg" alt=""></div
+                                        ><div class="carousel-card"><img src="3.jpg" alt=""></div
+                                        ><div class="carousel-card"><img src="4.jpg" alt=""></div
+                                        ><div class="carousel-card"><img src="3.jpg" alt=""></div
+                                        ><div class="carousel-card"><img src="4.jpg" alt=""></div
+                                        ><div class="carousel-card"><img src="5.jpg" alt=""></div>
+                                    </div>
+                                    <a href="javascript:void(0);" class="carousel-control_next carousel_control"><span class="glyphicon glyphicon-menu-right"></span></a>
+                                </div>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -138,7 +155,7 @@
             </div>
             <div class="col-md-6">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Multi</div>
+                    <div class="panel-heading">Vertical</div>
                     <div class="panel-body">
                         ...
                     </div>
@@ -158,6 +175,9 @@
     <script>
         $(function(){
             $("#carousel").carousel();
+            $("#carousel-multi").carousel({
+                multi: true
+            });
         })
     </script>
 </body>
