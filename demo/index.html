@@ -51,13 +51,13 @@
         .carousel-control_next {
             position: absolute;
             right: 0;
-            top: 26px;
+            bottom: 26px;
             z-index: 1;
         }
 
         .carousel-vertical .carousel-viewport {
-            width: 82px;
-            height: 358px;
+            width: 80px;
+            height: 350px;
         }
 
         .carousel-vertical .carousel-card {
@@ -65,20 +65,23 @@
             margin-right : 0;
             margin-bottom: 10px;
         }
+
+        .carousel-vertical .carousel-control_prev {
+            top: 0;
+            left: 29px;
+        }
+
+        .carousel-vertical .carousel-control_next {
+            bottom: 0;
+            right: 26px;
+        }
     </style>
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <div class="navbar navbar-inverse" role="navigation">
-        <div class="container-fluid">
+    <div class="navbar" role="navigation">
+        <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
                 <a href="#" class="navbar-brand">Carousel</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -93,7 +96,7 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <div class="col-md-6">
                 <div class="panel panel-default">
@@ -124,40 +127,24 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Multi</div>
                     <div class="panel-body">
-                            <div id="carousel-multi" class="carousel-multi">
-                                <div class="carousel-viewport">
-                                    <a href="javascript:void(0);" class="carousel-control_prev carousel_control"><span class="glyphicon glyphicon-menu-left"></span></a>
-                                    <div class="carousel-shelf">
-                                        <div class="carousel-card"><img src="1.jpg" alt=""></div
-                                        ><div class="carousel-card"><img src="2.jpg" alt=""></div
-                                        ><div class="carousel-card"><img src="3.jpg" alt=""></div
-                                        ><div class="carousel-card"><img src="4.jpg" alt=""></div
-                                        ><div class="carousel-card"><img src="2.jpg" alt=""></div
-                                        ><div class="carousel-card"><img src="3.jpg" alt=""></div
-                                        ><div class="carousel-card"><img src="4.jpg" alt=""></div
-                                        ><div class="carousel-card"><img src="3.jpg" alt=""></div
-                                        ><div class="carousel-card"><img src="4.jpg" alt=""></div
-                                        ><div class="carousel-card"><img src="5.jpg" alt=""></div>
-                                    </div>
-                                    <a href="javascript:void(0);" class="carousel-control_next carousel_control"><span class="glyphicon glyphicon-menu-right"></span></a>
+                        <div id="carousel-multi" class="carousel-multi">
+                            <div class="carousel-viewport">
+                                <a href="javascript:void(0);" class="carousel-control_prev carousel_control"><span class="glyphicon glyphicon-menu-left"></span></a>
+                                <div class="carousel-shelf">
+                                    <div class="carousel-card"><img src="1.jpg" alt=""></div
+                                    ><div class="carousel-card"><img src="2.jpg" alt=""></div
+                                    ><div class="carousel-card"><img src="3.jpg" alt=""></div
+                                    ><div class="carousel-card"><img src="4.jpg" alt=""></div
+                                    ><div class="carousel-card"><img src="2.jpg" alt=""></div
+                                    ><div class="carousel-card"><img src="3.jpg" alt=""></div
+                                    ><div class="carousel-card"><img src="4.jpg" alt=""></div
+                                    ><div class="carousel-card"><img src="3.jpg" alt=""></div
+                                    ><div class="carousel-card"><img src="4.jpg" alt=""></div
+                                    ><div class="carousel-card"><img src="5.jpg" alt=""></div>
                                 </div>
+                                <a href="javascript:void(0);" class="carousel-control_next carousel_control"><span class="glyphicon glyphicon-menu-right"></span></a>
                             </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading">One-by-one</div>
-                    <div class="panel-body">
-                        ...
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Vertical</div>
-                    <div class="panel-body">
-                        ...
+                        </div>
                     </div>
                 </div>
             </div>
@@ -165,7 +152,49 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Fsat</div>
                     <div class="panel-body">
-                        ...
+                        <div id="carousel-fast" class="carousel-fast">
+                            <div class="carousel-viewport">
+                                <a href="javascript:void(0);" class="carousel-control_prev carousel_control"><span class="glyphicon glyphicon-menu-left"></span></a>
+                                <div class="carousel-shelf">
+                                    <div class="carousel-card"><img src="1.jpg" alt=""></div
+                                    ><div class="carousel-card"><img src="2.jpg" alt=""></div
+                                    ><div class="carousel-card"><img src="3.jpg" alt=""></div
+                                    ><div class="carousel-card"><img src="4.jpg" alt=""></div
+                                    ><div class="carousel-card"><img src="2.jpg" alt=""></div
+                                    ><div class="carousel-card"><img src="3.jpg" alt=""></div
+                                    ><div class="carousel-card"><img src="4.jpg" alt=""></div
+                                    ><div class="carousel-card"><img src="3.jpg" alt=""></div
+                                    ><div class="carousel-card"><img src="4.jpg" alt=""></div
+                                    ><div class="carousel-card"><img src="5.jpg" alt=""></div>
+                                </div>
+                                <a href="javascript:void(0);" class="carousel-control_next carousel_control"><span class="glyphicon glyphicon-menu-right"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Vertical</div>
+                    <div class="panel-body">
+                        <div id="carousel-vertical" class="carousel-vertical">
+                            <div class="carousel-viewport">
+                                <a href="javascript:void(0);" class="carousel-control_prev carousel_control"><span class="glyphicon glyphicon-menu-up"></span></a>
+                                <div class="carousel-shelf">
+                                    <div class="carousel-card"><img src="1.jpg" alt=""></div
+                                    ><div class="carousel-card"><img src="2.jpg" alt=""></div
+                                    ><div class="carousel-card"><img src="3.jpg" alt=""></div
+                                    ><div class="carousel-card"><img src="4.jpg" alt=""></div
+                                    ><div class="carousel-card"><img src="2.jpg" alt=""></div
+                                    ><div class="carousel-card"><img src="3.jpg" alt=""></div
+                                    ><div class="carousel-card"><img src="4.jpg" alt=""></div
+                                    ><div class="carousel-card"><img src="3.jpg" alt=""></div
+                                    ><div class="carousel-card"><img src="4.jpg" alt=""></div
+                                    ><div class="carousel-card"><img src="5.jpg" alt=""></div>
+                                </div>
+                                <a href="javascript:void(0);" class="carousel-control_next carousel_control"><span class="glyphicon glyphicon-menu-down"></span></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -174,10 +203,20 @@
     <script src="../carousel.js"></script>
     <script>
         $(function(){
-            $("#carousel").carousel();
+            $("#carousel").carousel()
+
             $("#carousel-multi").carousel({
                 multi: true
-            });
+            })
+
+            $("#carousel-vertical").carousel({
+                vertical: true
+            })
+
+            $("#carousel-fast").carousel({
+                multi: true,
+                duration: 'fast'
+            })
         })
     </script>
 </body>
