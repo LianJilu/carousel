@@ -10,6 +10,8 @@ Carousel is a jQuery plugin to scroll elements by manual, it can scroll horizont
 
 ## How to get it
 
+[https://raw.githubusercontent.com/LianJilu/carousel/master/carousel.js](https://raw.githubusercontent.com/LianJilu/carousel/master/carousel.js)
+
 ## Usage
 
 **dependency**: [jQuery](https://jquery.com/download/)
