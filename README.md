@@ -17,7 +17,7 @@ Carousel is a jQuery plugin to scroll elements by manual, it can scroll horizont
 **dependency**: [jQuery](https://jquery.com/download/)
 
 ```javascript
-$(elements).carousel(options)
+$("#myCarousel").carousel(options)
 ```
 
 The HTML structure should be look like this
@@ -61,6 +61,18 @@ A map of additional options to pass to the method.
     Type: Number or String
 
     A string or number determining how long the animation will run, this is [jQuery's animate](https://api.jquery.com/animate/#animate-properties-duration-easing-complete).
+
+## Events
+
+Type: moved.carousel
+
+This event is fired when the carousel has completed its slide transition.
+
+```javascript
+$("#myCarousel").on("moved.carousel", function(){
+    // do something...
+})
+```
 
 ## LICENSE
 
