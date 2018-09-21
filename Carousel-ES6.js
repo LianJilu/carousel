@@ -4,10 +4,10 @@ class Carousel {
         this.options = options
         this.el = el
         this.location = 0
-        const $el = this.el;
-        this.cardNum = $el.querySelectorAll(".carousel-card").length
-        this.btnNext = $el.querySelector(".carousel-control_next")
-        this.btnPrev = $el.querySelector(".carousel-control_prev")
+        const el = this.el;
+        this.cardNum = el.querySelectorAll(".carousel-card").length
+        this.btnNext = el.querySelector(".carousel-control_next")
+        this.btnPrev = el.querySelector(".carousel-control_prev")
 
         const cardNum = this.cardNum
         const visualCardNum = this.getVisualCardNum()
@@ -18,25 +18,28 @@ class Carousel {
             return
         }
 
-        this.btnNext.on("click.carousel", $.proxy(this.next, this));
-        this.btnPrev.on("click.carousel", $.proxy(this.prev, this));
+        this.btnNext.addEventListener("click", this.next.apply(this));
+        this.btnPrev.addEventListener("click", this.prev.apply(this));
     }
 
     getCardLeng() {
-        const $card = this.$el.find(".carousel-card:first");
+        const card = this.el.querySelector(".carousel-card");
+        const computedStyle = window.getComputedStyle(card, null);
+
         if (this.options.vertical){
-            return $card.outerHeight(true);
+            return card.offsetHeight + computedStyle.marginTop + computedStyle.marginBottom;
         }else{
-            return $card.outerWidth(true);
+            return card.offsetWeight + computedStyle.marginLeft + computedStyle.marginRight;
         }
     }
 
     getVisualLeng () {
-        const $viewPort = this.$el.find(".carousel-viewport");
+        const viewPort = this.el.querySelector(".carousel-viewport");
+
         if (this.options.vertical){
-            return $viewPort.innerHeight();
+            return viewPort.clientHeight;
         }else{
-            return $viewPort.innerWidth();
+            return viewPort.clientWidth;
         }
     }
 
@@ -48,25 +51,21 @@ class Carousel {
     }
 
     move(relateLocation) {
-        const $el = this.$el;
-        const $shelf = this.$el.find(".carousel-shelf");
+        const el = this.el;
+        const shelf = this.el.querySelector(".carousel-shelf");
         const cardLength = this.getCardLeng();
         const relateLength = cardLength * relateLocation;
         const duration = this.options.duration || 400;
         const absoluteLength = cardLength * this.location;
 
-        const e = $.Event("moved.carousel");
+        const e = new Event("moved.carousel");
 
         if (this.options.vertical){
-            // $shelf.animate({top: "+=" + relateLength}, duration, function(){
-            //     $el.trigger(e);
-            // });
-            $shelf[0].style.top = -absoluteLength + "px";
+
+            shelf.style.top = -absoluteLength + "px";
         } else {
-            // $shelf.animate({left: "+=" + relateLength}, duration, function(){
-            //     $el.trigger(e);
-            // });
-            $shelf[0].style.left = -absoluteLength + "px";
+
+            shelf.style.left = -absoluteLength + "px";
         }
     }
 
