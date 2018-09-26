@@ -4,22 +4,21 @@ class Carousel {
         this.options = options
         this.el = el
         this.location = 0
-        const el = this.el;
         this.cardNum = el.querySelectorAll(".carousel-card").length
         this.btnNext = el.querySelector(".carousel-control_next")
         this.btnPrev = el.querySelector(".carousel-control_prev")
-
         const cardNum = this.cardNum
         const visualCardNum = this.getVisualCardNum()
+        this.scrollableNum = 0
 
         this.btnPrev.classList.add("disable")
         if (visualCardNum >= cardNum){
             this.btnNext.classList.add("disable")
             return
         }
-
-        this.btnNext.addEventListener("click", this.next.apply(this));
-        this.btnPrev.addEventListener("click", this.prev.apply(this));
+        this.scrollableNum = cardNum - visualCardNum
+        this.btnNext.addEventListener("click", this.next.bind(this));
+        this.btnPrev.addEventListener("click", this.prev.bind(this));
     }
 
     getCardLeng() {
@@ -27,9 +26,9 @@ class Carousel {
         const computedStyle = window.getComputedStyle(card, null);
 
         if (this.options.vertical){
-            return card.offsetHeight + computedStyle.marginTop + computedStyle.marginBottom;
+            return card.offsetHeight + parseInt(computedStyle.marginTop) + parseInt(computedStyle.marginBottom);
         }else{
-            return card.offsetWeight + computedStyle.marginLeft + computedStyle.marginRight;
+            return card.offsetWidth + parseInt(computedStyle.marginLeft) + parseInt(computedStyle.marginRight);
         }
     }
 
@@ -61,47 +60,47 @@ class Carousel {
         const e = new Event("moved.carousel");
 
         if (this.options.vertical){
-
             shelf.style.top = -absoluteLength + "px";
         } else {
-
             shelf.style.left = -absoluteLength + "px";
         }
+
+        el.dispatchEvent(e);
     }
 
     next() {
         const location = this.location;
         const cardNum = this.cardNum;
         const visualCardNum = this.getVisualCardNum();
-        const scrollableNum = cardNum - visualCardNum - location > 0 ? cardNum - visualCardNum - location : 0;
-        const $btnNext = this.$btnNext;
-        const $btnPrev = this.$btnPrev;
+        const scrollingNum = cardNum - visualCardNum - location > 0 ? cardNum - visualCardNum - location : 0;
+        const btnNext = this.btnNext;
+        const btnPrev = this.btnPrev;
         let relateLocation = 1;
         
-        if ($btnNext.is(".disable")) return;
+        if (btnNext.classList.contains("disable")) return;
 
         if (this.options.multi){
-            if (scrollableNum > visualCardNum) {
+            if (scrollingNum > visualCardNum) {
                 relateLocation = visualCardNum;
             } else {
-                relateLocation = scrollableNum;
+                relateLocation = scrollingNum;
             }
         }
 
         this.location = location + relateLocation;
         this.move();
-        if (this.location === scrollableNum) $btnNext.addClass("disable");
-        $btnPrev.removeClass("disable");
+        if (this.location === this.scrollableNum) btnNext.classList.add("disable");
+        btnPrev.classList.remove("disable");
     }
 
     prev() {
         const location = this.location;
-        const $btnNext = this.$btnNext;
-        const $btnPrev = this.$btnPrev;
+        const btnNext = this.btnNext;
+        const btnPrev = this.btnPrev;
         const visualCardNum = this.getVisualCardNum();
         let relateLocation = 1;
 
-        if ($btnPrev.is(".disable")) return;
+        if (btnPrev.classList.contains("disable")) return;
         
         if (this.options.multi) {
             if (location > visualCardNum) {
@@ -113,7 +112,7 @@ class Carousel {
         
         this.location = location - relateLocation;
         this.move();
-        if (this.location === 0) $btnPrev.addClass("disable");
-        $btnNext.removeClass("disable");
+        if (this.location === 0) btnPrev.classList.add("disable");
+        btnNext.classList.remove("disable");
     }
 }
