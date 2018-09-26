@@ -49,16 +49,16 @@ class Carousel {
         return visualCardNum;
     }
 
-    move(relateLocation) {
+    move() {
         const el = this.el;
         const shelf = this.el.querySelector(".carousel-shelf");
         const cardLength = this.getCardLeng();
-        const relateLength = cardLength * relateLocation;
         const duration = this.options.duration || 400;
         const absoluteLength = cardLength * this.location;
+        
+        const e = new Event("moved");
 
-        const e = new Event("moved.carousel");
-
+        shelf.style.transitionDuration = duration + "ms";
         if (this.options.vertical){
             shelf.style.top = -absoluteLength + "px";
         } else {
