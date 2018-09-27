@@ -2,6 +2,7 @@
 class Carousel {
     constructor (el, options = {}) {
         this.options = options
+        // this.options.onMoved = function(e){};
         this.el = el
         this.location = 0
         this.cardNum = el.querySelectorAll(".carousel-card").length
@@ -65,7 +66,9 @@ class Carousel {
             shelf.style.left = -absoluteLength + "px";
         }
 
-        el.dispatchEvent(e);
+        // el.dispatchEvent(e);
+        // debugger;
+        this.options.onMoved(e);
     }
 
     next() {
