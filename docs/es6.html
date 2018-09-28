@@ -207,15 +207,14 @@
         const carouselFast = document.querySelector("#carousel-fast");
         const carouselVertical = document.querySelector("#carousel-vertical");
         const car = new Carousel(carousel,{
-            onMoved: (e) => {
-                console.log(2);
+            onMoved: () => {
+                console.log("moved");
             }
         });
         new Carousel(carouselMulti,{multi: true, duration:1000});
         new Carousel(carouselFast, {multi:true, duration:300});
         new Carousel(carouselVertical, {vertical: true});
-        
-        // car.el.addEventListener("moved",function(){console.log(1)});
+
     </script>
 </body>
 </html>
