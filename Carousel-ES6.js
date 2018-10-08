@@ -1,5 +1,5 @@
 
-    export default class Carousel {
+    class Carousel {
         constructor (el, options = {}) {
             this.options = options
             this.el = el
