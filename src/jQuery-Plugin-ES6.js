@@ -1,5 +1,5 @@
 
-import Carousel from './Carousel-ES6.js';
+import Carousel from '/src/Carousel-ES6.js';
 
 +function($){
     function Plugin(option){
