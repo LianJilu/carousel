@@ -200,8 +200,9 @@
             </div>
         </div>
     </div>
-    <script src="../Carousel-ES6.js"></script>
-    <script>
+    <script type="module">
+        import Carousel from "./Carousel-ES6.js";
+        
         const carousel = document.querySelector("#carousel");
         const carouselMulti = document.querySelector("#carousel-multi");
         const carouselFast = document.querySelector("#carousel-fast");
@@ -214,7 +215,6 @@
         new Carousel(carouselMulti,{multi: true, duration:1000});
         new Carousel(carouselFast, {multi:true, duration:300});
         new Carousel(carouselVertical, {vertical: true});
-
     </script>
 </body>
 </html>
